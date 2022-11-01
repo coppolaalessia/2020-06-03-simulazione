@@ -10,18 +10,18 @@ import javafx.stage.Stage;
 
 public class EntryPoint extends Application {
 
-    @Override
-    public void start(Stage stage) throws Exception {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Scene.fxml"));
-		BorderPane root = loader.load();
-		FXMLController controller = loader.getController();
-		Model model = new Model();
-		controller.setModel(model);
-		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
-		stage.setScene(scene);
-		stage.show();
-    }
+	 @Override
+	    public void start(Stage stage) throws Exception {
+	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Scene.fxml"));
+			BorderPane root = loader.load();
+			FXMLController controller = loader.getController();
+			Model model = new Model();
+			controller.setModel(model);
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
+			stage.setScene(scene);
+			stage.show();
+	    }
 
     /**
      * The main() method is ignored in correctly deployed JavaFX application.

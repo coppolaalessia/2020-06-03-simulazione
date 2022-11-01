@@ -44,7 +44,22 @@ public class FXMLController {
 
     @FXML
     void doCreaGrafo(ActionEvent event) {
-
+    	this.txtResult.clear();
+    	
+    	String g= this.txtGoals.getText();
+    	
+    	try {
+    		int goals= Integer.parseInt(g);
+    		this.model.creaGrafo(goals);
+        	this.txtResult.setText("Grafico creato con "+ this.model.nVertici()+ " vertici e "+ this.model.nArchi()+ " archi\n");
+    		
+    	} catch(NumberFormatException e) {
+    		e.printStackTrace();
+    		this.txtResult.setText("Inserire un numero di goal");
+        	}
+    	
+    	
+    	
     }
 
     @FXML
